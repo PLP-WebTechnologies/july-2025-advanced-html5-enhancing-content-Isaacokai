@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Multi-Section Page with HTML5 Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>My Simple Page</h1>
+  <nav>
+    <a href="#lists">Lists</a> |
+    <a href="#table">Table</a> |
+    <a href="#media">Media</a> |
+    <a href="#form">Form</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="lists" aria-labelledby="lists-title">
+    <h2 id="lists-title">Well-Structured Content: Lists</h2>
+    <article>
+      <h3>Things I Want To Learn</h3>
+      <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Accessibility</li>
+        <li>Forms</li>
+      </ol>
+    </article>
+
+    <article>
+      <h3>Tools I Use</h3>
+      <ul>
+        <li>Code Editor</li>
+        <li>Browser</li>
+        <li>Notes App</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="table" aria-labelledby="table-title">
+    <h2 id="table-title">Well-Structured Content: Table</h2>
+    <table border="2">
+      <caption>My Weekly Study Plan</caption>
+      <thead>
+        <tr>
+          <th scope="col">Day</th>
+          <th scope="col">Topic</th>
+          <th scope="col">Minutes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Monday</th>
+          <td>HTML Basics</td>
+          <td>45</td>
+        </tr>
+        <tr>
+          <th scope="row">Wednesday</th>
+          <td>Forms</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <th scope="row">Friday</th>
+          <td>Accessibility</td>
+          <td>30</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Total</th>
+          <td>—</td>
+          <td>115</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <section id="media" aria-labelledby="media-title">
+    <h2 id="media-title">Media</h2>
+
+    <figure>
+      <img src="https://via.placeholder.com/640x360" alt="Placeholder image showing a simple rectangle">
+      <figcaption>Figure 1: A simple placeholder image.</figcaption>
+    </figure>
+
+    <figure>
+      <video controls width="480">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>Figure 2: Sample video with controls.</figcaption>
+    </figure>
+
+    <figure>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <figcaption>Figure 3: Sample audio clip.</figcaption>
+    </figure>
+  </section>
+
+  <section id="form" aria-labelledby="form-title">
+    <h2 id="form-title">Complete HTML5 Form</h2>
+
+    <form action="#" method="post" aria-describedby="form-help">
+      <p id="form-help">Fields marked with * are required.</p>
+
+      <fieldset>
+        <legend>Account</legend>
+
+        <p>
+          <label for="regid">Registration ID (read-only)</label><br>
+          <input type="text" id="regid" name="regid" value="REG-2025-0001" readonly>
+        </p>
+
+        <p>
+          <label for="username">Username *</label><br>
+          <input type="text" id="username" name="username" placeholder="yourusername"
+                 required minlength="3" maxlength="20" autocomplete="username"
+                 pattern="[a-zA-Z0-9_]{3,20}" title="3–20 letters, numbers, or underscores">
+        </p>
+
+        <p>
+          <label for="password">Password *</label><br>
+          <input type="password" id="password" name="password"
+                 placeholder="At least 8 characters"
+                 required minlength="8" autocomplete="new-password"
+                 pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+                 title="Must include a lowercase, an uppercase, and a number (8+ chars)">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Personal Details</legend>
+
+        <p>
+          <label for="fname">First Name *</label><br>
+          <input type="text" id="fname" name="given-name" placeholder="Ama"
+                 required autocomplete="given-name" minlength="2">
+        </p>
+
+        <p>
+          <label for="lname">Last Name *</label><br>
+          <input type="text" id="lname" name="family-name" placeholder="Mensah"
+                 required autocomplete="family-name" minlength="2">
+        </p>
+
+        <p>
+          <label for="email">Email *</label><br>
+          <input type="email" id="email" name="email" placeholder="you@example.com"
+                 required autocomplete="email">
+        </p>
+
+        <p>
+          <label for="tel">Phone (international format)</label><br>
+          <input type="tel" id="tel" name="tel" placeholder="+233541234567"
+                 autocomplete="tel"
+                 pattern="^\+?\d{10,15}$"
+                 title="Use 10–15 digits, optional +">
+        </p>
+
+        <p>
+          <label for="age">Age</label><br>
+          <input type="number" id="age" name="age" placeholder="18"
+                 min="13" max="120" step="1">
+        </p>
+
+        <p>
+          <label for="dob">Date of Birth *</label><br>
+          <input type="date" id="dob" name="bday" required>
+        </p>
+
+        <p>
+          <label for="timepref">Preferred Contact Time</label><br>
+          <input type="time" id="timepref" name="timepref">
+        </p>
+
+        <p>
+          <label for="start">Start (Date & Time)</label><br>
+          <input type="datetime-local" id="start" name="start">
+        </p>
+
+        <p>
+          <label for="favcolor">Favorite Color</label><br>
+          <input type="color" id="favcolor" name="favcolor">
+        </p>
+
+        <p>
+          <label for="website">Personal Website</label><br>
+          <input type="url" id="website" name="url" placeholder="https://example.com"
+                 autocomplete="url">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Address</legend>
+
+        <p>
+          <label for="address1">Address Line 1 *</label><br>
+          <input type="text" id="address1" name="address-line1" placeholder="House 10, Street Name"
+                 required autocomplete="address-line1">
+        </p>
+
+        <p>
+          <label for="city">City *</label><br>
+          <input type="text" id="city" name="address-level2" placeholder="Accra"
+                 required autocomplete="address-level2">
+        </p>
+
+        <p>
+          <label for="region">Region/State</label><br>
+          <input type="text" id="region" name="address-level1" placeholder="Greater Accra"
+                 autocomplete="address-level1">
+        </p>
+
+        <p>
+          <label for="zip">Postal Code</label><br>
+          <input type="text" id="zip" name="postal-code" placeholder="GA123"
+                 autocomplete="postal-code"
+                 pattern="[A-Za-z0-9\- ]{3,10}" title="3–10 letters/numbers">
+        </p>
+
+        <p>
+          <label for="country">Country *</label><br>
+          <select id="country" name="country" required autocomplete="country-name">
+            <option value="">-- Select country --</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferences</legend>
+
+        <p>
+          <label for="topics">Topic (type to see options)</label><br>
+          <input list="topiclist" id="topics" name="topics" placeholder="Pick a topic">
+          <datalist id="topiclist">
+            <option value="HTML"></option>
+            <option value="CSS"></option>
+            <option value="Accessibility"></option>
+            <option value="Performance"></option>
+          </datalist>
+        </p>
+
+        <p>
+          <span id="contact-label">Contact Method *</span><br>
+          <input type="radio" id="contact-email" name="contact" value="email" required>
+          <label for="contact-email">Email</label>
+          <input type="radio" id="contact-phone" name="contact" value="phone">
+          <label for="contact-phone">Phone</label>
+        </p>
+
+        <p>
+          <input type="checkbox" id="news" name="newsletter" value="yes" checked>
+          <label for="news">Subscribe to newsletter</label>
+        </p>
+
+        <p>
+          <label for="skill">Skill Level (0–10)</label><br>
+          <input type="range" id="skill" name="skill" min="0" max="10" step="1" value="5">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Files & Notes</legend>
+
+        <p>
+          <label for="avatar">Upload Avatar (PNG/JPG)</label><br>
+          <input type="file" id="avatar" name="avatar" accept=".png,.jpg,.jpeg">
+        </p>
+
+
+      <p>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </p>
+    </form>
+  </section>
+
+</main>
+
+<aside>
+  <h2>Helpful Note</h2>
+  <p>This page uses only native HTML5 validation. Try submitting with empty required fields to see it.</p>
+</aside>
+
+<footer>
+  <p>&copy; 2025 My Simple Page</p>
+</footer>
+
+</body>
+</html>
